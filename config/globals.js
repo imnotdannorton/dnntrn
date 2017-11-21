@@ -1,0 +1,16 @@
+var c = {};
+c.cx = '010126050142064925408:kcasoqryzhs';
+c.browserKey = 'AIzaSyC3vYYytdthkFFeG249Yya09VKFdPtjxuU';
+c.searchUrl ='https://www.googleapis.com/customsearch/v1';
+c.twitter = {};
+c.twitter.consumer_key = 'BLLqpGYWHrjVz0gl50avA';
+c.twitter.consumer_secret = 'jVjaMZIj7PQU4o04PjuK2uEqsnGmaheSCehpObBI';
+c.twitter.access_token_key = '13681972-YIutbOmBgspughuUn7OzuKhaKeQvxG7oa5CIskZA2';
+c.twitter.access_token_secret = 'yoVyYYnV73W3gxNifNZfUq6DucKrw46PrZt3xY7lgsJPT';
+c.instagram = {};
+c.instagram.client_id = 'bd2f9a749db74063ba22f074aefcf9a0';
+c.instagram.client_secret = '11c6001dada2435db78019dc5e88f50c';
+c.instagram.auth_token = 'f7e44ea6e4114e14b75c7484c5b61216';
+c.instagram.access_token = '11896865.bd2f9a7.63922ae6905d4c4f9170b67e34852c8d';
+c.instagram.userID = 11896865;
+module.exports = c;
