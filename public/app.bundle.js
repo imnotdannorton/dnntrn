@@ -22833,7 +22833,7 @@ exports.default = {
     activeColor: function activeColor(index) {
       var index = Math.floor(Math.random() * 6);
       var shade = window.palette[this.shades[index]];
-      var rgb = shade.rgb[0] + ',' + shade.rgb[1] + ',' + shade.rgb[2];
+      var rgb = shade['_rgb'][0] + ',' + shade['_rgb'][1] + ',' + shade['_rgb'][2];
       return 'rgb(' + rgb + ')';
     }
   },
@@ -23075,7 +23075,7 @@ exports.default = {
     activeColor: function activeColor(index) {
       var index = Math.floor(Math.random() * 6);
       var shade = window.palette[this.shades[index]];
-      var rgb = shade.rgb[0] + ',' + shade.rgb[1] + ',' + shade.rgb[2];
+      var rgb = shade['_rgb'][0] + ',' + shade['_rgb'][1] + ',' + shade['_rgb'][2];
       return 'rgb(' + rgb + ')';
     }
   },
