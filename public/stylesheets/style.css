@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Serif+Pro');
 
 body {
   padding: 0px;
@@ -51,6 +51,9 @@ nav{
   z-index: 99;
   text-align: center;*/
 }
+p, li{
+  font-family: 'Source Serif Pro';
+}
 ul{
 	list-style-type: none;
 	margin: 0px;
@@ -73,6 +76,10 @@ div.palette ul li{
 }
 div.palette ul li.expand{
   width: 10px;
+}
+.fs_img{
+  opacity:.2;
+  margin-top:-80px; 
 }
 nav ul{
 	display: flex;
@@ -106,13 +113,14 @@ nav em{
   padding: 1rem;
 }
 
-nav ul li{
+nav ul a{
   height: 16%;
   padding: 2%; 
   align-items: center;
   justify-content: center;
   display: flex;
   border-bottom: 1px dotted;
+  letter-spacing: 2px;
 }
 .frame_wrap{
   padding: 5rem;
@@ -187,13 +195,14 @@ p{
 .project-list i.fa-close:hover{
   cursor: pointer;
 }
-.project-holder em{
+.project-holder em.show, .project-holder em.hide{
   color: #fff;
   cursor: pointer;
   margin-bottom: .3rem;
 }
 .project-holder img{
   max-width: 100%;
+  display: block;
 }
 .project-holder h2{
   color: #fff;
@@ -296,7 +305,49 @@ ul.project-slides li:hover{
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0
 }
+nav ul a:hover li::before{
+  font-family: 'FontAwesome';
+  content:'\f0da';
+  color: #fff;
+  padding-right:10px;
+  animation: right-flash 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  position: relative;
+}
+nav ul a:hover li::after{
+  font-family: 'FontAwesome';
+  content:'\f0d9';
+  color: #fff;
+  padding-left:10px;
+  animation: left-flash 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  position: relative;
+}
 /* Safari 4.0 - 8.0 */
+@-webkit-keyframes right-flash {
+  0% {left:-10px; }
+  50% {left:-20px; }
+  100% {left:-10px; }
+}
+@keyframes right-flash {
+  0% {left:-10px; }
+  50% {left:-20px; }
+  100% {left:-10px; }
+}
+
+@-webkit-keyframes left-flash {
+  0% {right:-10px; }
+  50% {right:-20px; }
+  100% {right:-10px; }
+}
+@keyframes left-flash {
+  0% {right:-10px; }
+  50% {right:-20px; }
+  100% {right:-10px; }
+}
+
 @-webkit-keyframes unblur {
     from {-webkit-filter: blur(6px);}
     to {-webkit-filter: blur(0px);}

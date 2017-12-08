@@ -5,7 +5,9 @@
       <h1 class="vibrant">Hi!</h1>
       <p>I'm Dan Norton, a Boston area Developer and Designer.</p> 
       <p>Thanks for stopping by, feel free to <a href="/projects">check out some projects</a> or <a href="/contact">get in touch.</a></p>
+      <!-- <div class="fs_img"></div> -->
     </div>
+
   </template>
 
   <script>

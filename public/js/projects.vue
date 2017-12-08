@@ -9,7 +9,7 @@
       <img v-bind:src="getHires(item.fields.images[0].fields.file.url, 1000)" />
       <h2 class="darkvibrant_bg_solid">{{item.fields.title}}</h2>
       <em class="position darkmuted">{{item.fields.position}}</em>
-      <p class="project-blurb show" v-bind:class="[item.fields.slug]" v-html="markdown(trim(item.fields.description))"></p>
+      <p class="project-blurb darkmuted show" v-bind:class="[item.fields.slug]" v-html="markdown(trim(item.fields.description))"></p>
       <p class="darkmuted hide" v-html="markdown(item.fields.description)"></p>
       <em v-on:click="showProject(item)" class="show darkvibrant_bg_solid">Read More</em>
       <ul class="project-slides darkvibrant_bg">

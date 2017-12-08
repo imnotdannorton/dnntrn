@@ -6,7 +6,7 @@
       </header>
       <nav>
         <ul v-bind:class="{ active:navActive }">
-          <li v-for='item in items'><a v-bind:href="item.link">{{item.name.toLowerCase()}}</a></li>
+          <a v-bind:href="item.link" v-for='item in items'><li>{{item.name.toLowerCase()}}</li></a>
         </ul>
       </nav>
     </div>

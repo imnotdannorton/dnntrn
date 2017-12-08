@@ -10,7 +10,7 @@ var script = {}
 latestImg('11896865', [20], function(err, medias, pagination, remaining, limit){
   var index = Math.floor(Math.random()*20);
   var image = medias[index]['images']['standard_resolution']['url'];
-  style += '.fs_img{ float:left; \n width:100%;\n height:100%;\n filter:blur(6px);\n display:block\n; position:absolute;\n z-index:-1;\n background:url('+image+');\nbackground-size:cover;}\n'
+  style += '.fs_img{ float:left; \n width:100%;\n height:100%;\n filter:blur(6px);\n display:block\n; position:fixed;\n background:url('+image+');\nbackground-size:cover;}\n'
   console.log('get index', index);
   Vibrant.from(medias[index]['images']['standard_resolution']['url']).getPalette((err, palette) => buildCSS(err, palette, image));
 });
