@@ -6,7 +6,7 @@
     </transition>
     <h1 class="darkmuted">Projects</h1>
     <div v-for="item in sortedProjects"  class="project-holder" v-bind:class="[item.fields.slug]">
-      <img v-bind:src="getHires(item.fields.images[0].fields.file.url, 1000)" />
+      <img v-on:click="setActiveSlide(item.fields.images, 0)" v-bind:src="getHires(item.fields.images[0].fields.file.url, 1000)" />
       <h2 class="darkvibrant_bg_solid">{{item.fields.title}}</h2>
       <em class="position darkmuted">{{item.fields.position}}</em>
       <p class="project-blurb darkmuted show" v-bind:class="[item.fields.slug]" v-html="markdown(trim(item.fields.description))"></p>

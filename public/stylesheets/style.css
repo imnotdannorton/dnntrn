@@ -179,7 +179,7 @@ p{
   max-width: 80%;
 }
 #project-detail p{
-  margin: 0px auto;
+  margin: 5px auto;
   max-width: 80%;
 }
 .project-list i.fa-close{
@@ -203,6 +203,12 @@ p{
 .project-holder img{
   max-width: 100%;
   display: block;
+  /*filter: grayscale(100);*/
+  transition: all .3s;
+}
+.project-holder img:hover{
+  cursor: pointer;
+  /*filter: grayscale(0);*/
 }
 .project-holder h2{
   color: #fff;
