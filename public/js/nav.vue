@@ -3,10 +3,13 @@
     <div id="navwrap">
       <header v-on:click="navActive = !navActive">
         <i class="fa fa-close" v-if="navActive" aria-hidden="true"></i><i class="fa fa-bars" v-else aria-hidden="true"></i><em><img v-bind:src="image"/>DAN NORTON</em>
+        <ul class="desktop">
+          <a v-bind:href="item.link" v-bind:class="{active:isActive(item.link)}" v-for='item in items'><li>{{item.name.toLowerCase()}}</li></a>
+        </ul>
       </header>
-      <nav>
+      <nav class="mobile">
         <ul v-bind:class="{ active:navActive }">
-          <a v-bind:href="item.link" v-for='item in items'><li>{{item.name.toLowerCase()}}</li></a>
+          <a v-bind:href="item.link" v-for='item in items' v-bind:class="{active:isActive(item.link)}"><li>{{item.name.toLowerCase()}}</li></a>
         </ul>
       </nav>
     </div>
@@ -21,9 +24,29 @@
       data: () => ({
         items: [],
         navActive: false,
-        image: ""
+        image: "",
+        desktop: function(){
+          if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+           return false;
+         } else {
+           return true;
+         }
+        },
+        activePath: function(){
+          return window.location.pathname;
+        }
       }),
       methods:{
+        isActive: function(string){
+          return window.location.pathname == string
+        }
+        // desktop: function(){
+        //   if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+        //    return false;
+        //  } else {
+        //    return true;
+        //  }
+        // }
         // toggleNav: function(){
         //   jquery('#navwrap header').on('click', function(event){
         //     console.log(this.navActive, event.target);

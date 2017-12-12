@@ -2,9 +2,11 @@
   <div id="Contact">
     <h1>Get In Touch:</h1>
     <ul>
+      <li><a href="mailto:norton.dan@gmail.com">I have email.</a></li>
       <li><a href="https://www.linkedin.com/in/dan-norton/">I'm on LinkedIn.</a></li>
       <li><a href="https://github.com/imnotdannorton/">I'm on GitHub.</a></li>
-      <li><a href="mailto:norton.dan@gmail.com">I have email.</a></li>
+      <li><a href="https://twitter.com/dannorton/">I'm on Twitter.</a></li>
+      <li><a href="https://open.spotify.com/user/dannorton">I'm on Spotify.</a></li>
     </ul>
   </div>
 </template>
