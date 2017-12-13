@@ -1,5 +1,6 @@
 var express = require('express');
 var insta = require('../components/instagram');
+
 var Vibrant = require('node-vibrant');
 var router = express.Router();
 var latestImg = insta.fetchLatest;

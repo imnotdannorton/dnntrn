@@ -13,4 +13,6 @@ c.instagram.client_secret = '11c6001dada2435db78019dc5e88f50c';
 c.instagram.auth_token = 'f7e44ea6e4114e14b75c7484c5b61216';
 c.instagram.access_token = '11896865.bd2f9a7.63922ae6905d4c4f9170b67e34852c8d';
 c.instagram.userID = 11896865;
+c.spotifyClientID = 'cc4b5c08ccea4361b6966b18651479ed';
+c.spotifyClientSecret = '98cf94cb0eb74411af8af94a86156cd3';
 module.exports = c;

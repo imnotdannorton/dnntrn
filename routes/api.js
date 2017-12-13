@@ -1,6 +1,7 @@
 var express = require('express');
 var contentful = require('../components/contentful');
 var insta = require('../components/instagram');
+var spotify = require('../components/spotify');
 var express = require('express');
 var router = express.Router();
 
@@ -20,6 +21,15 @@ router.get('/nav', function(req, res){
 
 router.get('/insta', function(req, res){
 	insta.fetchUser('11896865');
+});
+router.get('/listening', function(req, res){
+  spotify.fetchLatest(req, res);
+});
+router.get('/top-tracks', function(req, res){
+  spotify.fetchTopTracks(req, res);
+});
+router.get('/top-artists', function(req, res){
+  spotify.fetchTopArtists(req, res);
 });
 router.get('/entries/:type', function(req, res){
 	var entries = contentful.fetchEntries(req.params.type);

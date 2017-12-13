@@ -129,6 +129,12 @@ nav ul a{
 p{
   line-height: 1.8rem;
 }
+.welcome.home h1{
+  animation: unblur 1s;
+  font-size: 4.5rem;
+  font-style: italic;
+  letter-spacing: 3px;
+}
 #project-detail{
   position: fixed;
   z-index: 200;
@@ -253,6 +259,11 @@ ul.project-slides li{
 }
 ul.project-slides li:hover{
   cursor: pointer;
+  background-color: rgba(0,0,0,.5);
+}
+ul.project-slides li strong{
+  margin-top: 10px;
+  display: inline-block;
 }
 .position h2{
   margin: .5em 0;
@@ -273,6 +284,9 @@ ul.project-slides li:hover{
 }
 .welcome{
   animation: unblur .3s;
+}
+.welcome.home p{
+  font-size: 1.5rem;
 }
 .welcome h2.darkvibrant_bg_solid{
   color: #fff;
@@ -404,6 +418,7 @@ ul.desktop a.active{
   100% {right:-10px; }
 }
 
+
 @-webkit-keyframes unblur {
     from {-webkit-filter: blur(6px);}
     to {-webkit-filter: blur(0px);}
@@ -414,3 +429,5 @@ ul.desktop a.active{
     from {filter: blur(6px);}
     to {filter: blur(0px);}
 }
+
+
