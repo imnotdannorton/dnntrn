@@ -53,13 +53,13 @@
         var width = w*scale;
         var height = h*scale;
         if(w && h){
-          return file+'?fm=jpg&fl=progressive&fit=fill&w='+width+'&h='+height;
+          return file+'?fl=progressive&fit=fill&w='+width+'&h='+height;
         }else if(h && !w){
-          return file+'?fm=jpg&fl=progressive&h='+width;
+          return file+'?fl=progressive&h='+width;
         }else if(w && !h){
-          return file+'?fm=jpg&fl=progressive&w='+width;
+          return file+'?fl=progressive&w='+width;
         }else{
-          return file+'?fm=jpg&fl=progressive';
+          return file+'?fl=progressive';
         } 
       },
       setActiveSlide: function(array, index){

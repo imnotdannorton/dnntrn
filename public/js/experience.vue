@@ -55,8 +55,10 @@
       </div>
       <hr class="muted muted_bg_solid"/>
       <div align="center">
-        <h2 class="darkvibrant_bg_solid download" v-on:click="">DOWNLOAD</h2>
+        <a href="/images/DN_Resume_2017.pdf" target="_blank">DOWNLOAD
+        </a>
       </div>
+      <hr class="muted muted_bg_solid"/>
     </div>
   </template>
 
