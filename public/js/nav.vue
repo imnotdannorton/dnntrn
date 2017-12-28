@@ -38,7 +38,7 @@
       }),
       methods:{
         isActive: function(string){
-          console.log("path:", window.location.pathname, string, window.location.pathname.indexOf(string.replace('/', '')));
+          // console.log("path:", window.location.pathname, string, window.location.pathname.indexOf(string.replace('/', '')));
           if(string == '/projects'){
             string = '/project'
           }
