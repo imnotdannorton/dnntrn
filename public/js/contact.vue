@@ -1,5 +1,5 @@
 <template>
-  <div id="Contact">
+  <div id="contact" class="welcome">
     <h1>Get In Touch:</h1>
     <ul>
       <li><a href="mailto:norton.dan@gmail.com">I have email.</a></li>

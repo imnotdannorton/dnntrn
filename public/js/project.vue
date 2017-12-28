@@ -1,5 +1,5 @@
 <template>
-  <div class="project-single">
+  <div class="project-single welcome">
     <i class="fa fa-close" v-if="slideshow.activeSlides.length > 0" v-on:click="clearLightbox()" aria-hidden="true"></i>
     <transition name="fade">
       <lightbox v-if="slideshow.activeSlides.length > 0" v-bind:slides="slideshow.activeSlides" v-bind:index="slideshow.activeSlideIndex"></lightbox>
