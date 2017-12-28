@@ -8,9 +8,9 @@ exports.fetch = function(type){
   // gets nav
   return client.getEntry('9fXXQJVotyku4iCaeeMGI');
 }
-exports.fetchEntries = function(type){
+exports.fetchEntries = function(type, slug){
   return client.getEntries({'content_type':type});
 }
-exports.fetchSingle = function(id, res){
-  return client.getEntry(id);
+exports.fetchSingle = function(type, slug){
+  return client.getEntries({'content_type':type, 'fields.slug':slug});
 }

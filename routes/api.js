@@ -35,15 +35,10 @@ router.get('/entries/:type', function(req, res){
 	var entries = contentful.fetchEntries(req.params.type);
 	entries.then(res.json.bind(res));
 });
-router.get('/projects/:id', function(req, res){
+router.get('/projects/:slug', function(req, res){
     // res.render('project', contentful.fetchSingle(req.params.id, res));
-    var fetch = contentful.fetchSingle(req.params.id);
+    var fetch = contentful.fetchSingle('project', req.params.slug);
     // var fetchNav = contentful.fetch();
-    fetch.then(function(entry){
-      page.content = entry.fields
-      console.log(page);
-      // res.render('project', page);
-      }
-    );
+    fetch.then(res.json.bind(res));
   });
 module.exports = router;

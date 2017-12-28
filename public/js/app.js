@@ -61,7 +61,7 @@ new Vue({
   el: '#app-root',
 
   data: {
-    currentRoute: window.location.pathname
+    currentRoute: '/'+window.location.pathname.split('/')[1]
   },
   // render(createElement) {
  	// 	return createElement(Navigation);

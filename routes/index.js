@@ -26,32 +26,39 @@ function buildCSS(err, object, img){
 function loop(swatches){
   console.log(Object.keys(swatches));
   Object.keys(swatches).forEach(function(obj){
-    console.log(obj, swatches[obj], swatches[obj]['_rgb']);
-    style += '.'+obj.toLowerCase()+'{\n';
-    // text
-    style += ' color: rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n'
-    style += '}\n';
-    style += '.'+obj.toLowerCase()+'_bg{\n';
-    // semi-transparent bg
-    style += ' background: rgba('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+', .8);\n'
-    style += '}\n';
-    style += '.'+obj.toLowerCase()+'_bg_solid{\n';
-    // solid color
-    style += ' background: rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n'
-    style += '}\n';
-    // border
-    style += '.'+obj.toLowerCase()+'_border{\n';
-    style += ' border-color: rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n'
-    style += '}\n';
-    if(obj.toLowerCase() == 'vibrant'){
-      style += 'a{\n';
-      style += ' color:rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n';
+    if(swatches[obj]){
+      console.log(obj, swatches[obj], swatches[obj]['_rgb']);
+      style += '.'+obj.toLowerCase()+'{\n';
+      // text
+      style += ' color: rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n'
       style += '}\n';
-      style += 'a:hover{\n';
-      style += ' background:rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n';
-      style += ' color:#fff\n';
+      style += '.'+obj.toLowerCase()+'_bg{\n';
+      // semi-transparent bg
+      style += ' background: rgba('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+', .8);\n'
       style += '}\n';
+      style += '.'+obj.toLowerCase()+'_bg_solid{\n';
+      // solid color
+      style += ' background: rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n'
+      style += '}\n';
+      style += '.'+obj.toLowerCase()+'_bg_solid a{\n';
+      // solid color
+      style += ' color:#fff;\n';
+      style += '}\n';
+      // border
+      style += '.'+obj.toLowerCase()+'_border{\n';
+      style += ' border-color: rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n'
+      style += '}\n';
+      if(obj.toLowerCase() == 'vibrant'){
+        style += 'a{\n';
+        style += ' color:rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n';
+        style += '}\n';
+        style += 'a:hover{\n';
+        style += ' background:rgb('+parseInt(swatches[obj]['_rgb'][0])+','+parseInt(swatches[obj]['_rgb'][1])+','+parseInt(swatches[obj]['_rgb'][2])+');\n';
+        style += ' color:#fff\n';
+        style += '}\n';
+      }  
     }
+    
   });
 }
 router.get('/*', function(req, res, next) {

@@ -38,7 +38,18 @@
       }),
       methods:{
         isActive: function(string){
-          return window.location.pathname == string
+          console.log("path:", window.location.pathname, string, window.location.pathname.indexOf(string.replace('/', '')));
+          if(string == '/projects'){
+            string = '/project'
+          }
+          if(string == '/' && window.location.pathname === '/'){
+            return true
+          }else if(string == '/' && window.location.pathname !== '/'){
+            return false
+          }else{
+            return window.location.pathname.indexOf(string.replace('/', '')) > -1
+          }
+          // return window.location.pathname.indexOf(string.replace('/', '')) > -1
         }
         // desktop: function(){
         //   if(window.innerWidth <= 800 && window.innerHeight <= 600) {
