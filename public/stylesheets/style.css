@@ -182,7 +182,7 @@ p{
 }
 #project-detail img{
   margin: 0px auto;
-  max-height: 75%;
+  max-height: 600px;
   max-width: 80%;
 }
 #project-detail p{
@@ -259,7 +259,7 @@ ul.project-slides li img{
 }
 ul.project-slides li{
   width: 20%;
-  min-height: 220px;
+  min-height: 225px;
   float: left;
   display: inline-block;
   margin: 0;
@@ -392,11 +392,21 @@ ul.desktop a.active{
   ul.desktop{
     display: none;
   }
+  ul.project-slides li {
+    min-height: 115px;
+    font-size: .6rem;
+  }
   header i{
     display: inline-block !important;
   }
   header em img{
     margin-left: -30px;
+  }
+  em.position{
+    display: block;
+  }
+  .welcome.home h1{
+    font-size: 3.5rem;
   }
   .position h2 small, .position h3 small{
     display: block;
