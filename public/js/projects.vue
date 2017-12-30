@@ -30,7 +30,6 @@
   import marked from 'marked';
   import jquery from 'jquery';
   import lightbox from './lightbox.vue'
-  // import emitter from './emitter.vue'
   export default {
     name: 'Projects',
     data: () => ({

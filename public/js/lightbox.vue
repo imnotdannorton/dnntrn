@@ -30,7 +30,6 @@
     	closeProject: function(){
     		this.slidesList = [];
     		console.log("clicked close");
-        this.$emit('closeLightbox');
       },
       prevSlide: function(){
         this.slidesIndex--;

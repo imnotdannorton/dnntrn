@@ -8,13 +8,22 @@ var style = "";
 var image = "";
 var script = {}
 // get image for generating CSS
-latestImg('11896865', [20], function(err, medias, pagination, remaining, limit){
-  var index = Math.floor(Math.random()*20);
-  var image = medias[index]['images']['standard_resolution']['url'];
-  style += '.fs_img{ float:left; \n width:110%;\n height:110%;\n filter:blur(6px);\n display:block\n; position:fixed;\n background:url('+image+');\nbackground-size:cover;}\n'
-  console.log('get index', index);
-  Vibrant.from(medias[index]['images']['standard_resolution']['url']).getPalette((err, palette) => buildCSS(err, palette, image));
-});
+// latestImg('11896865', [20], function(err, medias, pagination, remaining, limit){
+//   var index = Math.floor(Math.random()*20);
+//   var image = medias[index]['images']['standard_resolution']['url'];
+//   style += '.fs_img{ float:left; \n width:110%;\n height:110%;\n filter:blur(6px);\n display:block\n; position:fixed;\n background:url('+image+');\nbackground-size:cover;}\n'
+//   console.log('get index', index);
+//   Vibrant.from(medias[index]['images']['standard_resolution']['url']).getPalette((err, palette) => buildCSS(err, palette, image));
+// });
+function updateImage(){
+  latestImg('11896865', [20], function(err, medias, pagination, remaining, limit){
+    var index = Math.floor(Math.random()*20);
+    var image = medias[index]['images']['standard_resolution']['url'];
+    style += '.fs_img{ float:left; \n width:110%;\n height:110%;\n filter:blur(6px);\n display:block\n; position:fixed;\n background:url('+image+');\nbackground-size:cover;}\n'
+    console.log('get index', index);
+    Vibrant.from(medias[index]['images']['standard_resolution']['url']).getPalette((err, palette) => buildCSS(err, palette, image));
+  });
+}
 function buildCSS(err, object, img){
   if(typeof object !== 'undefined'){
     loop(object);
@@ -62,6 +71,7 @@ function loop(swatches){
   });
 }
 router.get('/*', function(req, res, next) {
+  updateImage();
   res.render('index', { title: 'Dan Norton', css: style, script:script });
 });
 
