@@ -33,9 +33,10 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-runtime": "^6.23.0",
     "babelify": "^7.3.0",
-    "browserify": "^14.1.0",
+    "browserify": "^14.5.0",
     "browserify-hmr": "^0.3.5",
     "concurrently": "^3.3.0",
+    "envify": "^4.1.0",
     "vue-hot-reload-api": "^2.0.9",
     "vueify": "^9.2.4",
     "watchify": "^3.9.0"
