@@ -83,8 +83,8 @@
       },
       methods:{
         activeColor:function(index){
-          var index = Math.floor(Math.random()*6);
-          var shade = window.palette[this.shades[index]];
+          var index = Math.floor(Math.random()*5);
+          var shade = window.palette[this.shades[index]] ||  window.palette["Vibrant"];
           var rgb = shade['_rgb'][0]+','+shade['_rgb'][1]+','+shade['_rgb'][2];
           return 'rgb('+rgb+')';
         } 

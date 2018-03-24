@@ -61,11 +61,11 @@
         this.image = window.palette.sourceImg;
         this.updateSalutation();
         var updateText = setInterval(this.updateSalutation, 5000);
-        // axios.all([
-        //   axios.get('/api/latest')
-        // ]).then(([{ data: spotifyData }]) => {
-        //   console.log(spotifyData);
-        // });
+        axios.all([
+          axios.get('/api/latest')
+        ]).then(([{ data: spotifyData }]) => {
+          console.log(spotifyData);
+        });
       }
       // components:{
       //   Project

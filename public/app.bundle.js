@@ -23077,8 +23077,8 @@ exports.default = {
   },
   methods: {
     activeColor: function activeColor(index) {
-      var index = Math.floor(Math.random() * 6);
-      var shade = window.palette[this.shades[index]];
+      var index = Math.floor(Math.random() * 5);
+      var shade = window.palette[this.shades[index]] || window.palette["Vibrant"];
       var rgb = shade['_rgb'][0] + ',' + shade['_rgb'][1] + ',' + shade['_rgb'][2];
       return 'rgb(' + rgb + ')';
     }
@@ -23119,6 +23119,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
 var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);
@@ -23153,6 +23157,12 @@ exports.default = {
     this.image = window.palette.sourceImg;
     this.updateSalutation();
     var updateText = setInterval(this.updateSalutation, 5000);
+    _axios2.default.all([_axios2.default.get('/api/latest')]).then(function (_ref) {
+      var _ref2 = (0, _slicedToArray3.default)(_ref, 1),
+          spotifyData = _ref2[0].data;
+
+      console.log(spotifyData);
+    });
   }
 };
 })()
@@ -23171,7 +23181,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-3", __vue__options__)
   }
 })()}
-},{"axios":1,"jquery":83,"vue":88,"vue-hot-reload-api":86}],94:[function(require,module,exports){
+},{"axios":1,"babel-runtime/helpers/slicedToArray":28,"jquery":83,"vue":88,"vue-hot-reload-api":86}],94:[function(require,module,exports){
 ;(function(){
 'use strict';
 
@@ -23646,7 +23656,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _c('div',{staticClass:"project-list welcome"},[(slideshow.activeSlides.length > 0)?_c('i',{staticClass:"fa fa-close",attrs:{"aria-hidden":"true"},on:{"click":function($event){clearLightbox()}}}):_e(),_v(" "),_c('transition',{attrs:{"name":"fade"}},[(slideshow.activeSlides.length > 0)?_c('lightbox',{attrs:{"slides":slideshow.activeSlides,"index":slideshow.activeSlideIndex}}):_e()],1),_v(" "),_c('h1',{staticClass:"darkmuted"},[_v("Projects")]),_v(" "),_l((sortedProjects),function(item){return _c('div',{staticClass:"project-holder",class:[item.fields.slug]},[_c('img',{attrs:{"src":getHires(item.fields.images[0].fields.file.url, 1000)}}),_v(" "),_c('h2',{staticClass:"darkvibrant_bg_solid"},[_v(_s(item.fields.title))]),_v(" "),_c('em',{staticClass:"position darkmuted"},[_v(_s(item.fields.position))]),_v(" "),_c('br'),_v(" "),_c('em',{staticClass:"show darkvibrant_bg_solid"},[_c('a',{attrs:{"href":'project/'+item.fields.slug}},[_v("Read More")])]),_v(" "),_c('hr',{staticClass:"muted muted_bg_solid"})])})],2)}}
+__vue__options__.render = function(){with(this){return _c('div',{staticClass:"project-list welcome"},[(slideshow.activeSlides.length > 0)?_c('i',{staticClass:"fa fa-close",attrs:{"aria-hidden":"true"},on:{"click":function($event){clearLightbox()}}}):_e(),_v(" "),_c('transition',{attrs:{"name":"fade"}},[(slideshow.activeSlides.length > 0)?_c('lightbox',{attrs:{"slides":slideshow.activeSlides,"index":slideshow.activeSlideIndex}}):_e()],1),_v(" "),_c('h1',{staticClass:"darkmuted"},[_v("Projects")]),_v(" "),_c('section',{attrs:{"id":"project-grid"}},_l((sortedProjects),function(item){return _c('div',{staticClass:"project-holder",class:[item.fields.slug]},[_c('a',{attrs:{"href":'project/'+item.fields.slug}},[_c('img',{attrs:{"src":getHires(item.fields.images[0].fields.file.url, 1000)}}),_v(" "),_c('h2',{staticClass:"darkvibrant_bg_solid"},[_v(_s(item.fields.title))]),_v(" "),_c('em',{staticClass:"position darkmuted"},[_v(_s(item.fields.position))]),_v(" "),_c('br'),_v(" "),_c('em',{staticClass:"show darkvibrant_bg_solid"},[_c('a',{attrs:{"href":'project/'+item.fields.slug}},[_v("Read More")])]),_v(" "),_c('hr',{staticClass:"muted muted_bg_solid"})])])}))],1)}}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

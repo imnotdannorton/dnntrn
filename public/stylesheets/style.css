@@ -130,7 +130,7 @@ p{
   line-height: 1.8rem;
 }
 .welcome.home h1{
-  animation: unblur 1s;
+  animation: unblur .3s;
   font-size: 4.5rem;
   font-style: italic;
   letter-spacing: 3px;
@@ -188,6 +188,22 @@ p{
 #project-detail p{
   margin: 5px auto;
   max-width: 80%;
+}
+#project-grid{
+ /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;*/
+}
+#project-grid .project-holder{
+  /*width: 50%;
+  flex-grow: 1;*/
+}
+#project-grid .project-holder a:hover{
+  background-color: transparent;
+  /*filter: grayscale(100);*/
+}
+#project-grid .project-holder img{
+  /*max-height: 300px;*/
 }
 .project-list i.fa-close, .project-single i.fa-close{
   position: fixed;
@@ -249,6 +265,9 @@ ul.project-slides{
   transition: all .3s;
   overflow: hidden;
   margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 ul.project-slides.active{
   height: auto;
@@ -263,7 +282,7 @@ ul.project-slides li{
   float: left;
   display: inline-block;
   margin: 0;
-  padding: 2.5%;
+  padding:1rem;
   color: #fff;
 }
 ul.project-slides li:hover{
@@ -271,7 +290,7 @@ ul.project-slides li:hover{
   background-color: rgba(0,0,0,.5);
 }
 ul.project-slides li strong{
-  margin-top: 10px;
+  margin: .8rem 0;
   display: inline-block;
 }
 .position h2{

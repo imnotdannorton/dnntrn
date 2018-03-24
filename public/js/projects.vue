@@ -5,23 +5,27 @@
       <lightbox v-if="slideshow.activeSlides.length > 0" v-bind:slides="slideshow.activeSlides" v-bind:index="slideshow.activeSlideIndex"></lightbox>
     </transition>
     <h1 class="darkmuted">Projects</h1>
-    <div v-for="item in sortedProjects"  class="project-holder" v-bind:class="[item.fields.slug]">
-      <img v-bind:src="getHires(item.fields.images[0].fields.file.url, 1000)" />
-      <h2 class="darkvibrant_bg_solid">{{item.fields.title}}</h2>
-      <em class="position darkmuted">{{item.fields.position}}</em>
-      <!-- <p class="project-blurb darkmuted show" v-bind:class="[item.fields.slug]" v-html="markdown(trim(item.fields.description))"></p> -->
-      <!-- <p class="darkmuted hide" v-html="markdown(item.fields.description)"></p> -->
-      <br/>
-      <em class="show darkvibrant_bg_solid"><a v-bind:href="'project/'+item.fields.slug">Read More</a></em>
-      <!-- <ul class="project-slides darkvibrant_bg">
-        <li v-for="(image, index) in item.fields.images" v-on:click="setActiveSlide(item.fields.images, index)" v-on:mouseover="darkenBg(item, index)"  v-on:mouseleave="removeDarkenBg(index)">
-          <img v-bind:src="getHires(image.fields.file.url, 150, 150)" />
-          <strong>{{image.fields.title}}</strong>
-        </li>
-      </ul> -->
-      <!-- <em v-on:click="hideProject(item)" class="hide darkvibrant_bg_solid">Read Less</em> -->
-      <hr class="muted muted_bg_solid"/>
-    </div>
+    <section id="project-grid">
+      <div v-for="item in sortedProjects"  class="project-holder" v-bind:class="[item.fields.slug]">
+        <a v-bind:href="'project/'+item.fields.slug">
+          <img v-bind:src="getHires(item.fields.images[0].fields.file.url, 1000)" />
+          <h2 class="darkvibrant_bg_solid">{{item.fields.title}}</h2>
+          <em class="position darkmuted">{{item.fields.position}}</em>
+          <!-- <p class="project-blurb darkmuted show" v-bind:class="[item.fields.slug]" v-html="markdown(trim(item.fields.description))"></p> -->
+          <!-- <p class="darkmuted hide" v-html="markdown(item.fields.description)"></p> -->
+          <br/>
+          <em class="show darkvibrant_bg_solid"><a v-bind:href="'project/'+item.fields.slug">Read More</a></em>
+          <!-- <ul class="project-slides darkvibrant_bg">
+            <li v-for="(image, index) in item.fields.images" v-on:click="setActiveSlide(item.fields.images, index)" v-on:mouseover="darkenBg(item, index)"  v-on:mouseleave="removeDarkenBg(index)">
+              <img v-bind:src="getHires(image.fields.file.url, 150, 150)" />
+              <strong>{{image.fields.title}}</strong>
+            </li>
+          </ul> -->
+          <!-- <em v-on:click="hideProject(item)" class="hide darkvibrant_bg_solid">Read Less</em> -->
+          <hr class="muted muted_bg_solid"/>
+        </a>
+      </div>
+    </section>
   </div>
 </template>
 
