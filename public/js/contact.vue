@@ -2,7 +2,7 @@
   <div id="contact" class="welcome">
     <h1>Get In Touch:</h1>
     <ul>
-      <li><a href="mailto:norton.dan@gmail.com">I have email.</a></li>
+      <li><a href="mailto:%6E%6F%72%74%6F%6E%2E%64%61%6E%40%67%6D%61%69%6C%2E%63%6F%6D">I have email.</a></li>
       <li><a href="https://www.linkedin.com/in/dan-norton/">I'm on LinkedIn.</a></li>
       <li><a href="https://github.com/imnotdannorton/">I'm on GitHub.</a></li>
       <li><a href="https://twitter.com/dannorton/">I'm on Twitter.</a></li>
